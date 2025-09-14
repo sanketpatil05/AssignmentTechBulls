@@ -9,7 +9,7 @@ This project demonstrates state management, data visualization, search, paginati
 -  Dashboard: Widgets for total sales & orders, Bar chart (monthly sales), Pie chart (sales by category).  
 -  Users Page: User list with search, filter, pagination, and user detail modal.  
 -  Reports Page*: Charts + Export data to CSV.  
--  Dummy Login: Use email-test@gmail.com & password-Tech@123 .  
+-  Dummy Login: Use email- test@gmail.com & password-Tech@123 .  
 -  Dark/Light Mode toggle.  
 -  Responsive Design using only custom CSS + media queries .  
 
@@ -25,13 +25,13 @@ This project demonstrates state management, data visualization, search, paginati
 
 ##  Project Structure
 src/
-├── components/ # Reusable UI components (charts, tables, header, sidebar, modal)
-├── context/ # Auth context
-├── data/ # JSON data (sales, users)
-├── pages/ # Pages (Dashboard, Users, Reports, Login)
-├── App.jsx # Routes
-├── main.jsx # Entry point
-├── index.css # Global CSS
+- components/ # Reusable UI components (charts, tables, header, sidebar, modal)
+- context/ # Auth context
+- data/ # JSON data (sales, users)
+- pages/ # Pages (Dashboard, Users, Reports, Login)
+- App.jsx # Routes
+- main.jsx # Entry point
+- index.css # Global CSS
 
 ##  Setup Instructions
 
