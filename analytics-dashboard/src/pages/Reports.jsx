@@ -2,26 +2,10 @@ import React, { useMemo } from "react";
 import ChartBar from "../components/ChartBar";
 import ChartPie from "../components/ChartPie";
 import { salesData } from "../data/sales";
+import { exportToCSV } from "../common/commonFunction";
 
-// Utility function to export data to CSV
-function exportToCSV(rows, filename = "report.csv") {
-  if (!rows || !rows.length) return;
-  const keys = Object.keys(rows[0]);
-  const csv = [keys.join(",")]
-    .concat(
-      rows.map((r) =>
-        keys.map((k) => `"${(r[k] ?? "").toString().replace(/"/g, '""')}"`).join(",")
-      )
-    )
-    .join("\n");
-  const blob = new Blob([csv], { type: "text/csv" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = filename;
-  a.click();
-  URL.revokeObjectURL(url);
-}
+
+
 
 export default function Reports() {
   // Monthly totals

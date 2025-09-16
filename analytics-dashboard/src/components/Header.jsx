@@ -1,16 +1,14 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '../context/AuthContext';
+import { ThemeContext } from '../context/ThemeContext';
 
 
 export default function Header() {
     const { logout } = useContext(AuthContext);
-    const [dark, setDark] = useState(() => localStorage.getItem('theme') === 'dark');
+    const { dark, toggleTheme } = useContext(ThemeContext);
 
 
-    useEffect(() => {
-        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
-        localStorage.setItem('theme', dark ? 'dark' : 'light');
-    }, [dark]);
+  
 
 
     return (
@@ -20,7 +18,7 @@ export default function Header() {
             </div>
             <div className="header-right">
                 <label className="switch">
-                    <input type="checkbox" checked={dark} onChange={() => setDark(d => !d)} />
+                    <input type="checkbox" checked={dark} onChange={toggleTheme} />
                     <span className="slider" />
                 </label>
                 <button className="btn btn-ghost" onClick={logout}>Logout</button>

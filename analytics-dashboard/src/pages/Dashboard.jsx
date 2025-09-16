@@ -23,6 +23,7 @@ export default function Dashboard() {
     return Object.entries(map).map(([month, sales]) => ({ month, sales }));
   }, []);
 
+   console.log("monthly",monthly)
   // Sales by category
   const byCat = useMemo(() => {
     const map = {};
@@ -31,7 +32,7 @@ export default function Dashboard() {
     });
     return Object.entries(map).map(([name, value]) => ({ name, value }));
   }, []);
-
+console.log("byCat",byCat)
   return (
     <div className="page">
       {/* Widgets */}
